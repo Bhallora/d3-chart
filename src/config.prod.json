@@ -1,0 +1,41 @@
+{
+    "authenticationEndpoint": "https://localhost:9445/",
+    "authenticationClientId": "pilot-app-name",
+    "applicationId": "7e2767c3-43f0-45cb-a891-4b0a3bf602ca",
+    "authenticationScope": "openid profile",
+    "fetchOpenIdConfigFromPoseidonNextAPI": false,
+    "authenticationExtraQueryParams": {
+      "resource": ""
+    },
+    "poseidonApiUrl": "https://localhost:9443/",
+    "customerApiUrl": "https://localhost:9446/",
+    "homeUrl": "/",
+    "userProfileUrl": "http://localhost:8080/poseidon-user-profile",
+    "logging": {
+      "logLevel": 4,
+      "bufferingTime": 5000,
+      "endpoint": "bulkEntry"
+    },
+    "formatting": {
+      "dateFormat": "MMMM dd YYYY",
+      "timeFormat": "HH:mm:ss",
+      "formatDate": {
+        "long": "dddd, d MMMM yyyy",
+        "longForMoment": "dddd, D MMMM YYYY",
+        "short": "dd/MM/yyyy",
+        "shortForMoment": "DD/MM/YYYY"
+      },
+      "formatTime": {
+        "long": "HH:mm:ss",
+        "short": "HH:mm"
+      },
+      "formatNumber": {
+        "decimalSeparator": ".",
+        "groupSeparator": " ",
+        "decimalDigits": 2,
+        "decimalGorup": 3,
+        "leadingZeros": 1
+      }
+    }
+  }
+  

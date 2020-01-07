@@ -1,0 +1,9 @@
+{
+    "id": "7e2767c3-43f0-45cb-a891-4b0a3bf602ca",
+    "name": "pilot-app-namechanged",
+    "url": "http://localhost:4300",
+    "oidcClientId": "pilot-app-namechanged",
+    "entitlements": [
+        { "id": "f8d7a5f6-14e2-40fe-b725-41dbe6363bae", "name": "Access Application" }
+    ]
+}

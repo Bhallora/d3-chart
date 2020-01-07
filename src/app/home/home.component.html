@@ -1,0 +1,15 @@
+<div class="kx-container kx-container--tab-l kx-mx--auto kx-my--large">
+  <div class="kx-card kx-card--skin-default kx-p--base kx-p--large@tab-s">
+      <h1 class="kx-typescale--xxlarge kx-mb--medium">{{title}}</h1>
+  </div>
+  <!-- <app-nav-bar></app-nav-bar> -->
+  <!-- <app-line-chart></app-line-chart> -->
+  <!-- <app-rd-chart></app-rd-chart> -->
+
+  <app-rd-reusable-component [incomingData]="dataFromParents" [configFile]="configurationDetail" [groupedByRequirement]="groupedByRequirementFromParents"></app-rd-reusable-component>
+  <!-- <app-d3-line-chart [data]="data" [config]="wobConfig"></app-d3-line-chart>
+  <app-d3-line-chart [data]="data" [config]="rpmConfig"></app-d3-line-chart>
+  <app-d3-line-chart [data]="data" [config]="flowRateConfig"></app-d3-line-chart>
+  <app-d3-line-chart [data]="data" [config]="sppConfig"></app-d3-line-chart>
+  <app-d3-line-chart [data]="data" [config]="torqConfig"></app-d3-line-chart> -->
+</div>

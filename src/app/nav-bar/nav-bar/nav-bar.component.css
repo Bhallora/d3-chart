@@ -1,0 +1,26 @@
+.note-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 25px;
+  }
+
+  .circle__progress {
+    fill: none;
+    stroke-width: 3;
+    stroke-opacity: 0.3;
+    stroke-linecap: round;
+  }
+  .note-display .circle__progress { stroke: pink; }
+ 
+  
+  .percent__int { font-size: 28px; }
+  .percent__dec { font-size: 12px; }
+  .circle__progress--fill {
+    --initialStroke: 0;
+    --transitionDuration: 0;
+    stroke-opacity: 1;
+    stroke-dasharray: var(--initialStroke);
+    stroke-dashoffset: var(--initialStroke);
+    transition: stroke-dashoffset var(--transitionDuration) ease;
+  }
