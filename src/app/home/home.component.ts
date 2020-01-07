@@ -46,8 +46,8 @@ export class HomeComponent implements OnInit{
       labelTextXAxis: [""], 
       numberOfTicksforY2Axis: 0,
       tickSizeOuter: 0, 
-      numberOfTicksforYAxis: 4,
-      numberOfTicksforXAxis:3, 
+      numberOfTicksforYAxis: 3,
+      numberOfTicksforXAxis:d3.timeHour.every(6), 
       tickPadding: 10,
       strokeLineCap:"round",
       fill: "transparent",
@@ -60,7 +60,9 @@ export class HomeComponent implements OnInit{
       gapBetweenCharts:60,
       strokeWidthforVerticalLine:2.5,
       colorOfAxes:"grey",
-      strokeWidthforAxes:1.5
+      strokeWidthforAxes:1.5,
+      format1:d3.timeFormat("%-d %b"),
+      format2:d3.timeFormat("%H:00")
       
   };
   
@@ -68,8 +70,24 @@ export class HomeComponent implements OnInit{
 
  
   constructor(){
-    this.dataFromParents.forEach((value) => {
-      value.indexes[0] = new Date(0).setUTCMilliseconds(value.indexes[0]);
+    
+    
+    this.dataFromParents.forEach((value:any) => {
+      console.log(value.indexes[0]);
+      // value.indexes[0] = new Date(value.indexes[0]);
+      // console.log(value.indexes[0]);
+      // let format = d3.timeFormat("%-d %b %H:%M");
+      // value.indexes[0]=format(value.indexes[0]);
+      // value.indexes[0] = new Date(0).setUTCSeconds(value.indexes[0]);
+      // console.log(value.indexes[0]);
+      // value.indexes[0]=new Date(value.indexes[0]);
+      // console.log(value.indexes[0]);
+      // // var parseUTCDate = d3.utcParse("%-d %b %H:%M");
+      value.indexes[0]= new Date(value.indexes[0] *1000);
+      console.log(value.indexes[0]);
+      
+    
+      
     });
   }
   ngOnInit(){

@@ -74,7 +74,12 @@ export class RdReusableComponentComponent implements OnInit {
         .call(d3.axisBottom(this.x).tickPadding(this.configFile.tickPadding)
         .tickSizeOuter(this.configFile.tickSizeOuter)
         .ticks(this.configFile.numberOfTicksforXAxis)
-        );
+      //   .tickFormat((d)=>{if () {
+      //     return this.configFile.format2
+      //   }
+      // else {return this.configFile.format1}}
+      //   ));
+      .tickFormat(this.configFile.format2));
 
         this.y = d3.scaleLinear()
         .domain(d3.extent(this.incomingData, (d) => d.value.item.double))
@@ -114,7 +119,7 @@ export class RdReusableComponentComponent implements OnInit {
         else
         {
           this.y = d3.scaleLinear()
-          .domain(d3.extent(this.incomingData, (d) => d.value.item.double))
+          .domain([d3.min(this.incomingData, (d) => d.value.item.double),d3.max(this.incomingData, (d) => d.value.item.double)] )
           .range([ this.drawingArea,0]);
           d3.select(`.chart${i}`)
           .append("g")
@@ -125,6 +130,7 @@ export class RdReusableComponentComponent implements OnInit {
           .call(d3.axisRight(this.y)
           .ticks(this.configFile.numberOfTicksforYAxis)
           .tickSizeOuter(this.configFile.tickSizeOuter))
+          // .tickPadding(125))
           .selectAll(".y-axis-label")
           .call(this.wrap);
   ;
