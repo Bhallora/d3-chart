@@ -12,7 +12,7 @@ export interface InterfaceConfigFile{
     labelTextXAxis:string[], 
     numberOfTicksforY2Axis:number, 
     tickSizeOuter:number, 
-    numberOfTicksforXAxis:number , 
+    numberOfTicksforXAxis:any , 
     tickPadding:number, 
     strokeLineCap:string,
     fill:string, 
@@ -28,5 +28,7 @@ export interface InterfaceConfigFile{
     strokeWidthforVerticalLine:number,
     colorOfAxes:string,
     strokeWidthforAxes:number
+    format1:any,
+    format2:any
 
   };
