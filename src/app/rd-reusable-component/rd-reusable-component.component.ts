@@ -18,6 +18,7 @@ export class RdReusableComponentComponent implements OnInit {
  private chartWidth; 
  private chartHeight; 
  private drawingArea;
+//  privateg d:any;
 //  private slider;
  private mouseFollower:any;
  private labelArea:any;
@@ -29,8 +30,10 @@ export class RdReusableComponentComponent implements OnInit {
     this.chartWidth = this.configFile.width - this.configFile.marginLeft - this.configFile.marginRight;
     this.chartHeight = this.configFile.height - this.configFile.marginTop - this.configFile.marginBottom;
     this.drawingArea = (this.chartHeight / this.configFile.numberOfCharts)-this.configFile.gapBetweenCharts;
+    // this.d=this.configFile.format1;
     this.makeSvg();
     this.createCharts();
+   
    
     this.createVerticalScrollLine();
     this.createCircleAtVerticalScroll();
@@ -79,6 +82,7 @@ export class RdReusableComponentComponent implements OnInit {
       //   }
       // else {return this.configFile.format1}}
       //   ));
+      // .tickFormat(this.configFile.format2));
       .tickFormat(this.configFile.format2));
 
         this.y = d3.scaleLinear()
@@ -92,7 +96,9 @@ export class RdReusableComponentComponent implements OnInit {
         .style("stroke-width", this.configFile.strokeWidthforAxes)
         .call(d3.axisLeft(this.y)
         .tickPadding(this.configFile.tickPadding)
-        .ticks(this.configFile.numberOfTicksforYAxis)
+        
+        .tickValues(this.configFile.numberOfTicksforYAxis)
+        
         .tickSizeOuter(this.configFile.tickSizeOuter))
         .selectAll(".y-axis-label")
         .call(this.wrap);
@@ -236,13 +242,7 @@ addXAxisLabel(i){
           .attr("class", "scroller")
           
 
-        // const drag = d3.drag();
-        //   drag.on('drag', () => {
-        //     d3.select('.scroller')
-        //       .attr('transform', `translate(${d3.event.x},0)`);  
-        //   });
-        
-        //   slider.call(drag);
+       
 
       slider.append("line")
           .attr("x1",0)
