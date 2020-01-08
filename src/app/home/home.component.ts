@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit{
       labelTextXAxis: [""], 
       numberOfTicksforY2Axis: 0,
       tickSizeOuter: 0, 
-      numberOfTicksforYAxis: 3,
+      numberOfTicksforYAxis: d3.extent(this.dataFromParents, (d) => d.value.item.double),
       numberOfTicksforXAxis:d3.timeHour.every(6), 
       tickPadding: 10,
       strokeLineCap:"round",

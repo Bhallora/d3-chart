@@ -20,7 +20,7 @@ export interface InterfaceConfigFile{
     color:any[], 
     labelTextYAxisLeft:string[], 
     labelTextYAxisRight:string[], 
-    numberOfTicksforYAxis:number, 
+    numberOfTicksforYAxis:number[], 
     noOfLineGraphs:number[],
     gapBetweenCharts:number, 
     colorOfVerticalLine:string,
